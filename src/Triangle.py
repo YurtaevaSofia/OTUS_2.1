@@ -5,15 +5,17 @@ from math import sqrt
 class Triangle(Figure):
     name = "Triangle"
 
-    def __init__(self, a, b, c):
+    def __new__(cls, a, b, c):
         if a + b > c and a + c > b and b + c > a:
-            self.a = a
-            self.b = b
-            self.c = c
+            obj = object.__new__(cls)
+            return obj
         else:
-            self.a = None
-            self.b = None
-            self.c = None
+            return None
+
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
 
     @property
     def perimetr(self):

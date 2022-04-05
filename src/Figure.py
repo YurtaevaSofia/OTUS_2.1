@@ -5,3 +5,5 @@ class Figure:
             return self.area + figure.area
         else:
             raise ValueError("Work only with Figures!")
+
+

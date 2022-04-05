@@ -10,9 +10,7 @@ def test_triangle_exists():
 
 def test_triangle_not_exists():
     triangle = Triangle(13, 140, 15)
-    assert triangle.a is None
-    assert triangle.b is None
-    assert triangle.c is None
+    assert triangle is None
 
 
 def test_triangle_area_count():
@@ -22,7 +20,7 @@ def test_triangle_area_count():
 
 def test_unexisting_triangle_area_count():
     triangle = Triangle(30, 4, 5)
-    assert triangle.area == 0
+    assert triangle is None
 
 
 def test_triangle_perimetr_count():
